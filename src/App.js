@@ -1,44 +1,27 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import LoginScreen from './pages/LoginScreen';
+import RegisterScreen from './pages/RegisterScreen';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPass from './pages/ResetPassword';
 
 function App() {
-  const handleClick = () => {
-    // implementation details
-  };
-  
+
   return (
-    <div className="center-image">
-      <img 
-      style={{
-        height: 102,
-        width: 102,
-      }}
-      src={require('./logo.png')}/>
-    <div>
-
-      <div>
-        <button type="button" onClick={handleClick} className="login_button">
-        Login
-      </button>
-      <div>
-        <button type="button" onClick={handleClick} className="signup_button">
-        Sign Up Test
-      </button>
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/register" element={<RegisterScreen />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPass />} />
+          </Routes>
+        </Router>
       </div>
-  
-      
-      </div>
-    
-
-    </div>
-      <div className='Welcome-message' >Welcome to Toggle!</div>
-    </div>
-    
-    
-    
-  );
-
+  )
 }
 
   
 export default App;
-
